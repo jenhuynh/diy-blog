@@ -2,6 +2,8 @@ import * as React from "react";
 
 import { Routes, Route, Link } from "react-router-dom";
 
+import DiyPostList from "./DiyPostList";
+import DiyPostSingle from "./DiyPostSingle";
 import Tasks from "./Tasks";
 
 const App = () => (
@@ -13,6 +15,7 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/post/:id" element={<DiyPostSingle />} />
       </Routes>
     </main>
   </>
@@ -23,6 +26,7 @@ const Home = () => (
     <h1>{process.env.REACT_APP_TITLE}</h1>
     <h2>{process.env.REACT_APP_SUBTITLE}</h2>
     <Tasks />
+    <DiyPostList />
   </>
 );
 
